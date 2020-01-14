@@ -30,7 +30,7 @@ class WeatherApi {
       throw Exception('error fetching weather for location');
     }
 
-    final weatherJson = jsonDecode(weatherResponse.body) as List;
+    final weatherJson = jsonDecode(weatherResponse.body);
     return Weather.fromJson(weatherJson);
   }
 

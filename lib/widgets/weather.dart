@@ -42,8 +42,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
                 ),
               );
               if (city != null) {
-                BlocProvider.of<WeatherBloc>(context)
-                    .add(FetchWeather(city: city));
+                _weatherBloc.add(FetchWeather(city: city));
               }
             },
           )
