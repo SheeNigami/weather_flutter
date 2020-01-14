@@ -54,7 +54,16 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           bloc: _weatherBloc,
           builder: (_, WeatherState state) {
             if (state is WeatherEmpty) {
-              return Center(child: Text('Please Select a Location'));
+              return Center(
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Text('Please Select a Location by Clicking on the Search Button at the Top Right',
+                    style: new TextStyle(
+                      fontSize: 36.0,
+                    )
+                  )
+                )
+              );
             }
             if (state is WeatherLoading) {
               return Center(child: CircularProgressIndicator());
