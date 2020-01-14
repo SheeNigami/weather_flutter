@@ -42,7 +42,8 @@ class _WeatherWidgetState extends State<WeatherWidget> {
                 ),
               );
               if (city != null) {
-                _weatherBloc.dispatch(FetchWeather(city: city));
+                BlocProvider.of<WeatherBloc>(context)
+                    .add(FetchWeather(city: city));
               }
             },
           )
@@ -91,12 +92,6 @@ class _WeatherWidgetState extends State<WeatherWidget> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _weatherBloc.dispose();
-    super.dispose();
   }
 }
 
